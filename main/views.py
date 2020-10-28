@@ -40,7 +40,8 @@ class IndexByCategory(ListView):
         return context
 
     def get_queryset(self):
-        return Item.objects.all()
+        category = Category.objects.get(id=self.kwargs['category_id'])
+        return Item.objects.filter(category=category)
 
 class ItemDetailView(DetailView):
     model = Item
