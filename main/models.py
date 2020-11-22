@@ -7,7 +7,7 @@ class Category(models.Model):
     title = models.CharField(max_length=100)
 
     def get_category_url(self):
-        return reverse("main:index_by_category", kwargs={
+        return reverse("index_by_category", kwargs={
             'category_id': self.id
         })
 
@@ -25,16 +25,16 @@ class Item(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("main:product",kwargs={
+        return reverse("product",kwargs={
             'pk':self.id
             })
     def get_add_to_cart_url(self):
-        return reverse("main:add-to-cart", kwargs={
+        return reverse("add-to-cart", kwargs={
             'pk': self.id
         })
 
     def get_remove_from_cart_url(self):
-        return reverse("main:remove-from-cart", kwargs={
+        return reverse("remove-from-cart", kwargs={
             'pk': self.id
         })
 

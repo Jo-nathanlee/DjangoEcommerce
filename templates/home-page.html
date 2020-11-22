@@ -27,7 +27,7 @@
           {% else %}
             <li class="nav-item active">
           {% endif %}
-              <a class="nav-link" href="{% url 'main:home' %}">All
+              <a class="nav-link" href="{% url 'home' %}">All
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -70,7 +70,7 @@
             <div class="card">
               <!--Card image-->
               <div class="view overlay">
-                <img src="/{{ item.image.url }}" class="card-img-top" alt="">
+                <img src="{{ item.image.url }}" class="card-img-top" alt="">
                 <a href="{{ item.get_absolute_url }}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
